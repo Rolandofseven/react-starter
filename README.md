@@ -1,3 +1,7 @@
+1. create-react-app react-starter --use-npm
+2. npm install axios
+3. npm install enzyme enzyme-adapter-react-16
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
