@@ -1,6 +1,7 @@
 1. create-react-app react-starter --use-npm
 2. npm install axios
 3. npm install enzyme enzyme-adapter-react-16
+4. npm install bootstrap --save npm install --save reactstrap react react-dom
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

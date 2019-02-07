@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { Table,Button } from 'reactstrap';
 
 const getTableBody = (data) => {
     const dataTable = data.map(da => (
-        <tr>
-            <td>{da.id}</td>
+        <tr key={da.id}>
+            <th scope="row" >{da.id}</th>
             <td>{da.title}</td>
             <td>{da.completed.toString()}</td>
         </tr>
@@ -12,17 +12,16 @@ const getTableBody = (data) => {
     return dataTable;    
 }
 
+
 export default function DataTable(props) {
-
-
     return (
     <div>
-      {props.data.length}
       <br/><br/>
-      <table>
+      <Button onClick={props.incrementCounter}>Click</Button>
+      <Table striped><tbody>
             {getTableBody(props.data)}
-        </table>
-
+            </tbody>
+        </Table>
     </div>
   )
 }

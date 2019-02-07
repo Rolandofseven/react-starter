@@ -7,19 +7,18 @@ export default class Home extends Component {
         super(props);
         this.state = {
             data:[],
+            counter:0
         };
     }
 
-    getTableBody(){
-        const dataTable = this.state.data.map(da => (
-            <tr>
-                <td>{da.id}</td>
-                <td>{da.title}</td>
-                <td>{da.completed.toString()}</td>
-            </tr>
-        ))
-        return dataTable;    
+    sayHello = () => {
+        alert("Hello");
     }
+
+    incrementCounter = () => {
+        this.setState({counter: this.state.counter+1});
+    }
+
 
     componentDidMount (){
         axios.default.get("https://jsonplaceholder.typicode.com/todos").then(res => {
@@ -31,11 +30,8 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        I'm a home page  <br/>
-        <DataTable data={this.state.data} />
-        <table>
-            {this.getTableBody()}
-        </table>
+        I'm a home page - {this.state.counter} <br/>
+        <DataTable data={this.state.data} sayHello={this.sayHello} incrementCounter={this.incrementCounter}/>
       </div>
     )
   }
