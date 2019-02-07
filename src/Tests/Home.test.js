@@ -13,3 +13,34 @@ describe('<Home />', () => {
         expect(wrapper.find(DataTable)).toHaveLength(1);
     })
 })
+
+describe('<Home />', () => {
+    it('Initial counter value should be 0 ', () => {
+        const wrapper = shallow(<Home/>);
+
+        const instance = wrapper.instance();
+        expect(wrapper.state('counter')).toBe(0);
+        
+    })
+})
+
+describe('<Home />', () => {
+    it('Initial counter value should be 1 after increment ', () => {
+        const wrapper = shallow(<Home/>);
+
+        const instance = wrapper.instance();
+        instance.incrementCounter();
+        expect(wrapper.state('counter')).toBe(1);
+    })
+})
+
+describe('<Home />', () => {
+    it('Initial counter value should be 2 after 2 increments ', () => {
+        const wrapper = shallow(<Home/>);
+
+        const instance = wrapper.instance();
+        instance.incrementCounter();
+        instance.incrementCounter();
+        expect(wrapper.state('counter')).toBe(2);
+    })
+})
